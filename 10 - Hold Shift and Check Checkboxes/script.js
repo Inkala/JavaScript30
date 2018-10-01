@@ -1,4 +1,19 @@
 const boxes = Array.from(document.querySelectorAll('input'));
-const holdSelect = boxes.map(box => {
-  box.addEventListener('click', e => console.log('E:', e, '\nBox:', boxes.indexOf(box)));
-});
+let lastChecked;
+
+function handleChecks(e) {
+  let inBetween = false;
+  if (e.shiftKey && this.checked) {
+    boxes.map(box => {
+      if (box === this || box === lastChecked) {
+        inBetween = !inBetween;
+      }
+      if (inBetween) {
+        box.checked = true;
+      }
+    });
+  }
+  lastChecked = this;
+}
+
+boxes.map(box => box.addEventListener('click', handleChecks));
