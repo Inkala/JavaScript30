@@ -18,7 +18,8 @@
       padding: 20px;
       border-radius: 50%;
       width:200px;
-      margin-bottom: 50px;
+      margin-bottom:45px;
+      margin-top: -60px;
     }
 
     .wrapper {
@@ -64,7 +65,7 @@
     }
 
     .plates input:checked + label:before {
-      content: '🌮';
+      content: '🍕';
     }
 
     .add-items {
