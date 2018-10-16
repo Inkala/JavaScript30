@@ -22,5 +22,4 @@ function shadow(e) {
     `;
   }
   
-// ${xWalk}px ${yWalk}px ${blur}px rgba(255, 0, 255, 0.7),
 hero.addEventListener('mousemove', shadow);
