@@ -2,14 +2,22 @@ const addItems = document.querySelector('.add-items');
 const deleteItem = document.querySelector('.delete-button');
 const itemsList = document.querySelector('.plates');
 const checkAll = document.querySelector('.button-check')
+const uncheckAll = document.querySelector('.button-uncheck')
 const clearAll = document.querySelector('.button-clear ')
 let items = JSON.parse(localStorage.getItem('items')) || [];
 
-// if (items.length === 0) {
-//   console.log(items)
-//   const buttons = document.querySelectorAll('.button-all');
-//   buttons.forEach(button => button.disabled = true);
-// }
+function disableButtons() {
+  const buttons = document.querySelectorAll('.button-all');
+  buttons.forEach(button => {
+    if (items.length === 0) {
+      button.disabled = true;
+      button.classList.add('disabled');
+    } else {
+      button.disabled = false;
+      button.classList.remove('disabled');
+    }
+  });
+}
 
 function addItem(e) {
   e.preventDefault();
@@ -26,6 +34,7 @@ function addItem(e) {
 }
 
 function populateList(plates = [], platesList) {
+  disableButtons();
   platesList.innerHTML = plates.map((plate, i) => {
     return `
       <li>
@@ -51,10 +60,6 @@ function deleteElement(i) {
   populateList(items, itemsList);
 }
 
-function handleChecks() {
-  console.log('handleChecks clicked!');
-}
-
 function hancleClear() {
   if (confirm('Are you sure?')) {
     items = [];
@@ -64,13 +69,29 @@ function hancleClear() {
   }
 }
 
+function handleChecks() {
+  items.map(item => {
+    item.done = true
+  });
+  localStorage.setItem('items', JSON.stringify(items));
+  populateList(items, itemsList);
+}
+
+function handleUnchecks() {
+  items.map(item => {
+    item.done = false
+  });
+  localStorage.setItem('items', JSON.stringify(items));
+  populateList(items, itemsList);
+}
+
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 checkAll.addEventListener('click', handleChecks);
+uncheckAll.addEventListener('click', handleUnchecks);
 clearAll.addEventListener('click', hancleClear);
 
 
 populateList(items, itemsList);
 
-// Create a button to check and uncheck all
 // Disable new buttons when list is empty

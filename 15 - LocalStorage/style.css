@@ -118,9 +118,26 @@ h2 {
   background-color: #00571a;  
 }
 
+.button-uncheck {
+  background-color: #dfa40f;
+}
+.button-uncheck:hover {
+  background-color: #b9880d;  
+}
+
 .button-clear {
   background-color: #c80000;
 }
 .button-clear:hover {
   background-color: #720000;  
+}
+
+.disabled {
+  background-color: #dddddd;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  background-color: #dddddd;
+  cursor: not-allowed;
 }
