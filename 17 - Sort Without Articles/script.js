@@ -30,20 +30,3 @@ document.querySelector('#bands').innerHTML = sortedBands
 // document.querySelector('#bands').innerHTML = fixBandsNames.map(band => {
 //   return `<li>${band}</li>`;
 // }).join('');
-
-
-/*
-- A Skylit Drive
-- An Old Dog
-- Anywhere But Here
-- Counterparts
-- Norma Jean
-- Oh, Sleeper
-- Pierce the Veil
-- Say Anything
-- The Bled
-- The Devil Wears Prada
-- The Midway State
-- The Plot in You
-- We Came as Romans
-*/
