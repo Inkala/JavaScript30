@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Countdown Timer</title>
   <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="timer">
     <div class="timer__controls">
@@ -14,6 +16,8 @@
       <button data-time="900" class="timer__button">Quick 15</button>
       <button data-time="1200" class="timer__button">Snack 20</button>
       <button data-time="3600" class="timer__button">Lunch Break</button>
+      <button class="timer__button pause">||</button>
+      <button class="timer__button stop">■</button>
       <form name="customForm" id="custom">
         <input type="text" name="minutes" placeholder="Enter Minutes">
       </form>
@@ -24,6 +28,8 @@
     </div>
   </div>
 
+  <audio class="ping" src="https://freesound.org/data/previews/342/342754_5260872-lq.mp3" hidden></audio>
   <script src="scripts-START.js"></script>
 </body>
+
 </html>

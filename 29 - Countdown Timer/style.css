@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   font-size: 10px;
   background: #8E24AA;
-  background: linear-gradient(45deg,  #42a5f5 0%,#478ed1 50%,#0d47a1 100%);
+  background: linear-gradient(45deg, #42a5f5 0%, #478ed1 50%, #0d47a1 100%);
 }
 
 *, *:before, *:after {
@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  margin:0;
+  margin: 0;
   text-align: center;
   font-family: 'Inconsolata', monospace;
 }
@@ -19,58 +19,93 @@ body {
   font-weight: 100;
   font-size: 20rem;
   margin: 0;
-  color:white;
-  text-shadow:4px 4px 0 rgba(0,0,0,0.05);
+  color: white;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 .timer {
-  display:flex;
+  display: flex;
   min-height: 100vh;
-  flex-direction:column;
+  flex-direction: column;
 }
 
 .timer__controls {
   display: flex;
 }
 
-.timer__controls > * {
-  flex:1;
+.timer__controls>* {
+  flex: 1;
 }
 
 .timer__controls form {
-  flex:1;
-  display:flex;
+  flex: 1;
+  display: flex;
 }
 
 .timer__controls input {
-  flex:1;
-  border:0;
-  padding:2rem;
+  flex: 1;
+  border: 0;
+  padding: 2rem;
 }
 
 .timer__button {
-  background:none;
-  border:0;
+  background: none;
+  border: 0;
   cursor: pointer;
-  color:white;
+  color: white;
   font-size: 2rem;
   text-transform: uppercase;
-  background:rgba(0,0,0,0.1);
-  border-bottom:3px solid rgba(0,0,0,0.2);
-  border-right:1px solid rgba(0,0,0,0.2);
-  padding:1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
   font-family: 'Inconsolata', monospace;
 }
 
-.timer__button:hover,
-.timer__button:focus {
-  background:rgba(0,0,0,0.2);
-  outline:0;
+.timer__button:hover, .timer__button:focus {
+  background: rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+
+.stop {
+  background: #e34024;
+  background: linear-gradient(45deg, #e65035 0%, #e34024 50%, #ce3116 100%);
+  font-size: 25px;
+  flex: 0.3;
+}
+
+.stop:hover, .stop:focus {
+  background: #d43316;
+  background: linear-gradient(45deg, #e34024 0%, #ce3116 50%, #c72c11 100%);
+}
+
+.pause {
+  background: #efcd23;
+  background: linear-gradient(45deg, #f1d233 0%, #efcd23 50%, #dbb601 100%);
+  font-weight: bold;
+  line-height: 0.01;
+  flex: 0.3;
+}
+
+.pause:hover, .pause:focus {
+  background: #e2bd02;
+  background: linear-gradient(45deg, #ebc81d 0%, #e2bd02 50%, #caa901 100%);
+}
+
+.play {
+  background: #219412;
+  background: linear-gradient(45deg, #219412 0%, #219412 50%, #1d880f 100%);
+  font-size: 40px;
+}
+
+.play:hover, .play:focus {
+  background: #1d880f;
+  background: linear-gradient(45deg, #219412 0%, #1d880f 50%, #167c09 100%);
 }
 
 .display {
-  flex:1;
-  display:flex;
+  flex: 1;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -78,5 +113,5 @@ body {
 
 .display__end-time {
   font-size: 4rem;
-  color:white;
+  color: white;
 }
